@@ -28,12 +28,20 @@ public class Main {
 
     }
 
+    /**
+     * In case user wants to start over\entered an invalid choice
+     * @throws IOException
+     */
     private static void showFirstTillThirdScreen() throws IOException {
         showWelcomeScreen();
         showChoiceScreen();
         showResultScreen();
     }
 
+    /**
+     * third screen, show the result and asks the user if he want to start over, valid values Y/N
+     * @throws IOException
+     */
     private static void showResultScreen() throws IOException {
         double currResult = coin.calculate(amount);
         System.out.println("The result is " + currResult);
@@ -47,6 +55,11 @@ public class Main {
             showFourthScreen();
         }
     }
+
+    /**
+     * The final screen, shows all the results of the converting action
+     * @throws IOException
+     */
 
     private static void showFourthScreen() throws IOException {
         System.out.println("Thanks for using our currency converter");
@@ -66,6 +79,10 @@ public class Main {
 
     }
 
+    /**
+     * a list that saves all the results
+     * @param currResult
+     */
     private static void saveResultInList(double currResult) {
         Result res = new Result();
         res.setAmount(amount);
@@ -75,11 +92,17 @@ public class Main {
         allResult.add(res);
     }
 
+    /**
+     * user's amount choice,
+     */
     private static void showChoiceScreen() {
         System.out.println("Please enter an amount to convert");
         amount = getAmount();
     }
 
+    /**
+     * first screen that the user sees
+     */
     private static void showWelcomeScreen() {
 
         try {
